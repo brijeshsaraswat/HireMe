@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8d9f7767-ee56-4c5e-94fb-6a65d82c6335" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userauth/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/userauth/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userauth/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/userauth/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userauth/templates/register_emp.html" beforeDir="false" afterPath="$PROJECT_DIR$/userauth/templates/register_emp.html" afterDir="false" />
     </list>
