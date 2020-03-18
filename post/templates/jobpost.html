@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <title>JOBS</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        {% url 'candidate_jobs' as the_url %}
+        {% url 'post_candidate' as the_url2 %}
+        {% if request.get_full_path == the_url or request.get_full_path == the_url2 %}
+        <a class="nav-link" href="{% url 'post_candidate' %}">Home <span class="sr-only">(current)</span></a>
+        {% else %}
+          <a class="nav-link" href="{% url 'post_employer' %}">Home <span class="sr-only">(current)</span></a>
+        {% endif %}
+      </li>
+      {% url 'candidate_jobs' as the_url %}
+        {% url 'post_candidate' as the_url2 %}
+      {% if request.get_full_path == the_url or request.get_full_path == the_url2 %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'candidate_jobs' %}"> Applied Jobs <span class="sr-only">(current)</span></a>
+      </li>
+      {% endif %}
+        {% url 'new_post' as the_url %}
+        {% url 'post_employer' as the_url2 %}
+      {% if request.get_full_path == the_url or request.get_full_path == the_url2 %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'postcreate' %}"> New Post <span class="sr-only">(current)</span></a>
+      </li>
+      {% endif %}
+        {% url 'new_post' as the_url %}
+        {% url 'post_employer' as the_url2 %}
+      {% if request.get_full_path == the_url or request.get_full_path == the_url2 %}
+
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'employer_job_applied' %}"> Jobs Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+      {% endif %}
+    </ul>
+      <a href="{% url 'login' %}"><button class="btn btn-outline-success my-2 my-sm-0" >Logout</button></a>
+  </div>
+</nav>
+
+<div class="container">
+
+    <h1> {{header}} </h1>
+{% for job in post  %}
+
+<div class="card border-primary">
+  <h5 class="card-header border-primary">{{job.job_title}}</h5>
+  <div class="card-body border-primary">
+    <h5 class="card-title">{{job.employer.company_name}}</h5>
+      <h5>{{job.type}}</h5>
+      <h6>Posted On: {{job.posted_on}}</h6>
+      <h6>Posted On: {{job.apply_by}}</h6>
+    <p class="card-text">{{job.description}}</p>
+        {% url 'post_candidate' as the_url %}
+        {% if request.get_full_path == the_url %}
+      <form action="" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{job.id}}">
+        <button class="btn btn-primary" value = "dfgdf" >APPLY HERE</button>
+    </form>
+      {% endif %}
+  </div>
+</div>
+<br>
+
+{% endfor %}
+</div>
+</body>
+</html>

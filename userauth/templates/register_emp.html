@@ -1,0 +1,121 @@
+<html>
+<head><title>Register</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<!--<body>-->
+<!--<h1>Register Emp</h1>-->
+<!--{% if error %}-->
+<!--{{ error }}-->
+<!--{% endif %}-->
+<!--<form action="{% url 'signup_emp' %}" method="post">-->
+    <!--{% csrf_token %}-->
+    <!--<input type="text" name="first_name" placeholder="First Name">-->
+    <!--<input type="text" name="last_name" placeholder="Last Name">-->
+    <!--<input type="text" name="uname" placeholder="Username">-->
+    <!--<input type="text" name="company_name" placeholder="Company Name">-->
+    <!--<input type="email" name="email" placeholder="Email">-->
+    <!--<input type="number" name="phone" placeholder="Phone No">-->
+    <!--<input type="password" name="pass" placeholder="Password">-->
+    <!--<input type="password" name="passwordagain" placeholder="Password">-->
+
+    <!--<input type="submit" value="SignUp">-->
+<!--</form>-->
+<!--</body>-->
+
+
+<body>
+
+<div class="container">
+
+
+<br>
+    <br>
+<div class="col-md-6 ml-auto mr-auto" style="width: 40rem;">
+
+<h1 class="float-center">H!reMe</h1>
+    <div class="card-body">
+    <h5 class="card-title">Employer Registration</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Register Here</h6>
+
+{% if error %}
+
+      <div class="alert alert-danger" role="alert">
+  {{ error }}
+</div>
+{% endif %}
+
+    <form action="{% url 'signup_emp' %}" method="post">
+        <div class="form-group">
+                {% csrf_token %}
+
+    <label >Username</label>
+    <input type="text" name="uname" placeholder="Username" class="form-control" >
+  </div>
+
+        <div class="form-group">
+    <label >Password</label>
+    <input type="password" name="pass" placeholder="Password" class="form-control" >
+  </div>
+
+        <div class="form-group">
+    <label >Confirm Password</label>
+    <input type="password" name="passwordagain" placeholder="Password" class="form-control" >
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label >First Name</label>
+      <input type="text" name="first_name" placeholder="First Name" class="form-control" >
+    </div>
+    <div class="form-group col-md-6">
+      <label >Last Name</label>
+      <input type="text" name="last_name" placeholder="Last Name" class="form-control" >
+    </div>
+  </div>
+        <div class="form-group">
+    <label >Email</label>
+    <input type="email" name="email" placeholder="Email" class="form-control" >
+  </div>
+
+        <div class="form-group">
+    <label >Company Name</label>
+    <input input type="text" name="company_name" placeholder="Company Name" class="form-control" >
+  </div>
+
+  <div class="form-group">
+    <label >Mobile No</label>
+    <input type="number" name="phone" placeholder="Phone No" class="form-control" >
+  </div>
+  <button type="submit" class="btn btn-primary">Sign Up</button>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          Already a User !!!&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a href="/login" ><button type="button" class="btn btn-outline-primary">Login Here</button></a>
+
+</form>
+
+  </div>
+</div>
+
+</div>
+
+<!--<form action="{% url 'signup' %}" method="post">-->
+    <!--{% csrf_token %}-->
+    <!--<input type="text" name="first_name" placeholder="First Name">-->
+    <!--<input type="text" name="last_name" placeholder="Last Name">-->
+    <!--<input type="text" name="uname" placeholder="Username">-->
+    <!--<input type="email" name="email" placeholder="Email">-->
+    <!--<input type="number" name="phone" placeholder="Phone No">-->
+    <!--<input type="password" name="pass" placeholder="Password">-->
+    <!--<input type="password" name="passwordagain" placeholder="Password">-->
+
+    <!--<input type="submit" value="SignUp">-->
+<!--</form>-->
+
+
+
+</body>
+
+</html>
