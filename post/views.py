@@ -11,14 +11,10 @@ from django.views.generic import ListView,CreateView
 
 @login_required(login_url="/login/")
 def home(request):
-    # datas = apps.get_model('userauth.candidate').objects.filter(user=request.user)
-    datas2 = apps.get_model('userauth.employer').objects.filter(user=request.user)
-    # datas=candidate.objects.filter(user = request.user)
-    print("this is the data",datas2,request.user)
-    # return  HttpResponse("this is home",datas)
-    return render(request, "showdata.html",{'data':datas2})
+    data = apps.get_model('userauth.employer').objects.filter(user=request.user)
+    print("this is the data",data,request.user)
+    return render(request, "showdata.html",{'data':data})
 
-# @login_required(login_url="/login/")
 class PostCreateView(CreateView):
 
     fields = ['job_title','applied_by','posted_on','type','description']
@@ -46,7 +42,6 @@ def postcreate(request):
             else:
                 return HttpResponse("this is wrong")
 
-        # return render(request, "jobpost_form.html")
     else:
         job_title = request.POST["job_title"]
         apply_by= request.POST["apply_by"]
@@ -57,10 +52,8 @@ def postcreate(request):
         employer_instance = employer.objects.filter(user=request.user)[0]
         newjob = job_posted.objects.create(employer=employer_instance, job_title=job_title,apply_by=apply_by,posted_on=type,type=type,description=description)
         print("USER LOGGEDIN",request.user)
-        # model = apps.get_model('userauth.employer').objects.all().filter(first_name="ranarauff").is_candidate
         model = employer.objects.filter(user=request.user)
         print(employer.objects.filter(user=request.user))
-        # print(model[0].is_candidate)
         if not model:
             print("the user is no employer")
             return redirect("/login/")
@@ -72,17 +65,11 @@ def postcreate(request):
             else:
                 return HttpResponse("this is wrong")
 
-    # job_title = request.POST.get('job_title')
-    # applied_by = request.POST.get('job_title')
-    # posted_on = request.POST.get('job_title')
-    # type = request.POST.get('job_title')
-    # description = request.POST.get('job_title')
-
 @login_required(login_url="/login/")
 def post_employer(request):
 
     model = employer.objects.filter(user=request.user)
-    print("modddddd",model)
+    print("mod",model)
     if not model:
         print("the user is no employer")
         return redirect("/login/")
@@ -110,14 +97,12 @@ def employer_job_applied(request):
 
     else:
         print("the user is employer", request.user.id)
-        # posts = job_posted.objects.filter(employer=model[0])
         posts = applied_for.objects.filter(job_applied__in=job_posted.objects.filter(employer=model[0]).values_list('id',flat=True))
         print(posts)
         header = "JOBS DASHBOARD"
         if model[0].is_candidate == False:
 
             return render(request, "appliedjobs.html", context={"post": posts, "header": header})
-            # return HttpResponse(posts)
         else:
             return HttpResponse("this is wrong")
 

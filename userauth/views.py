@@ -1,9 +1,9 @@
-from django.shortcuts import render,redirect
 from django.contrib import auth
 from django.contrib.auth.models import User
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+
 from .models import candidate, employer
-from django.contrib.auth.decorators import  login_required
+
 
 # Create your views here.
 
@@ -75,10 +75,3 @@ def signup_emp(request):
     else:
         return render(request,"register_emp.html")
 
-# @login_required(login_url="/login/")
-# def home_r(request):
-#     # datas = apps.get_model('userauth.candidate').objects.filter(user=request.user)
-#     datas=candidate.objects.filter(user = request.user)
-#     print("this is the data",datas,request.user)
-#     # return  HttpResponse("this is home",datas)
-#     return render(request, "showdata.html",{'data':datas})

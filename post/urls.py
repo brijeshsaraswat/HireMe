@@ -26,5 +26,4 @@ urlpatterns = [
     path('post_candidate', views.post_candidate, name="post_candidate"),
     path('candidate_jobs',views.candidate_jobs,name="candidate_jobs"),
     path('employer_job_applied',views.employer_job_applied,name="employer_job_applied"),
-    # path('post/new/',PostCreateView.as_view() ,name='jobpost-create'),
 ]
