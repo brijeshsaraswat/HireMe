@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8d9f7767-ee56-4c5e-94fb-6a65d82c6335" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HireMe/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/HireMe/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/post/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/post/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userauth/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/userauth/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userauth/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/userauth/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userauth/templates/register_emp.html" beforeDir="false" afterPath="$PROJECT_DIR$/userauth/templates/register_emp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userauth/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userauth/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
