@@ -2,7 +2,7 @@
 
 Aim of this project is to demonstrate the job listing platform which serves both ,Candidates and Recruiters with a common GUI using Django framework.<br>
 
-Link to the deployed instance: [http://www.hiremeboat.herokuapp.com/](http://www.hiremeboat.herokuapp.com/)<br>
+Link to the deployed instance: [https://hiremeboat.herokuapp.com/](https://hiremeboat.herokuapp.com/)<br>
 
 
 ### How do I run this Project Locally?
