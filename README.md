@@ -8,11 +8,11 @@ Link to the deployed instance: [https://hiremeboat.herokuapp.com/](https://hirem
 ### How do I run this Project Locally?
 1. Clone the Repository:<br>
 ```git clone https://github.com/brijeshsaraswat/HireMe.git```<br>
-2.Run migrations:<br>
+2. Run migrations:<br>
 ```python manage.py migrate```<br>
-3.Run local server:<br>
+3. Run local server:<br>
 ```python manage.py runserver```<br>
-4.Open ```http://127.0.0.1:8000/``` or ```http://localhost:8000/``` in your web browser.<br>
+4. Open ```http://127.0.0.1:8000/``` or ```http://localhost:8000/``` in your web browser.<br>
 
 
 ### ScreenShots:
